@@ -20,8 +20,12 @@ A solução é dividida em duas camadas principais que se comunicam:
 2. **Backend (Simulador Python):** Responsável pela lógica de negócios, cálculo de energia (kWh), precificação (R$ 0,90/kWh), simulação do sensor do carregador (Hardware) e Dashboard Administrativo.
 
 ### Diagrama de Blocos
-graph LR
-    A[Usuário] --> B(App Mobile)
-    B --> C{Backend Python}
-    C --> D[Hardware Simulado]
-    C --> E[Dashboard Admin]
+```mermaid
+graph TD
+    A[Usuário] -->|Interage| B(App Mobile - React Native)
+    B -->|Envia Dados| C{Backend / Simulador Python}
+    C -->|Processa Pagamento| D[Divisão de Receita: 90% Local / 10% GoodWe]
+    C -->|Simula Hardware| E[Sensor do Eletroposto]
+    E -->|Retorna Dados| C
+    C -->|Atualiza Status| B
+    B -->|Exibe| F[Dashboard Admin & Histórico]
