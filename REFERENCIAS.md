@@ -33,8 +33,8 @@ Essa combinação é usada para limpar e padronizar o que o usuário digita.
 **Exemplo no código:**
 
 email = input("Email: ").strip().lower()
-# Se o usuário digitar: "  LAURA@EMAIL.COM  "
-# O Python transforma para: "laura@email.com"
+Se o usuário digitar: "  LAURA@EMAIL.COM  "
+O Python transforma para: "laura@email.com"
 
 ---
 
