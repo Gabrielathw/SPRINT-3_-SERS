@@ -22,10 +22,10 @@ A solução é dividida em duas camadas principais que se comunicam:
 ### Diagrama de Blocos
 ```mermaid
 graph TD
-    A[Usuário] -->|Interage| B(App Mobile - React Native)
+    A[Usuário] -->|Interage| B(App Mobile - thunkable)
     B -->|Envia Dados| C{Backend / Simulador Python}
     C -->|Processa Pagamento| D[Divisão de Receita: 90% Local / 10% GoodWe]
     C -->|Simula Hardware| E[Sensor do Eletroposto]
     E -->|Retorna Dados| C
     C -->|Atualiza Status| B
-    B -->|Exibe| F[Dashboard Admin & Histórico]
+    B -->|Exibe| F[Dashboard Admin e Histórico]
